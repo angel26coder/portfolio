@@ -1,0 +1,73 @@
+*,
+*::after,
+*::before:not(i) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-family: "Nunito", sans-serif;
+}
+
+html,
+body,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-family: "Nunito", sans-serif;
+}
+
+.balls {
+    border: 2px solid red;
+    height: 500px;
+
+    span {
+        position: relative;
+        display: block;
+        width: 50px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: transparent;
+        animation: float .6s ease-in-out infinite;
+
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 40px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: blue;
+            animation: side .8s ease-in-out infinite;
+        }
+    }
+
+    @keyframes float {
+        0% {
+            transform: translatey(10px);
+        }
+
+        50% {
+            transform: translatey(-10px);
+        }
+
+        100% {
+            transform: translatey(10px);
+        }
+    }
+
+    @keyframes side {
+        0% {
+            transform: translatex(10px);
+        }
+
+        50% {
+            transform: translatex(-10px);
+        }
+
+        100% {
+            transform: translatex(10px);
+        }
+    }
+}
